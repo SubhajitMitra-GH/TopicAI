@@ -22,28 +22,28 @@
 
         </div>
         <div class="lines" id="item">
-            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px ;color: aliceblue; padding-bottom: 12px; ">Length</h2>
+            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px; color: aliceblue;">Length</h2>
             <div class="radio-group" id="item">
                 <label>
-                    <input type="radio" name="options" value="briefly"> Briefly
+                    <input type="radio" name="options" value="briefly"> Brief
                 </label>
                 <label>
                     <input type="radio" name="options" value="comprehensively"> Comprehensive
-                </label>
-                <label>
-                    <input type="radio" name="options" value="vastly"> Vastly
                 </label>
             </div>
     
         </div>
         <div class="length" id="item">
-            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px; color: aliceblue;">Format</h2>
+            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px ;color: aliceblue; padding-bottom: 12px;">Context</h2>
             <div class="radio-length">
                 <label>
-                    <input type="radio" name="option" value="in essay"> Essay
+                    <input type="radio" name="option" value="practical examples"> Practical
                 </label>
                 <label>
-                    <input type="radio" name="option" value="in paragraph"> Paragraph
+                    <input type="radio" name="option" value="theoretical concepts"> Theoritical
+                </label>
+                <label>
+                    <input type="radio" name="option" value="historical background"> Historical
                 </label>
             </div>
 
@@ -105,11 +105,7 @@
     break;
       }
     else if(selectedValue==="comprehensively"){
-        length1="Comprehensively"
-    break;
-    }
-    else if(selectedValue==="vastly"){
-      length1="vastly"
+        length1="comprehensively"
     break;
     }
 
@@ -120,12 +116,16 @@ for (const radioBtn of radioButtonFormat) {
          const selectedValue = radioBtn.value;
      
 
-      if (selectedValue === "in essay") {
-        format="in paragraph of 300 words strictly not less than that it can be more"
+      if (selectedValue === "practical examples") {
+        format="practical examples"
     break;
       }
-    else if(selectedValue==="in paragraph"){
-        format="in paragraph"
+      else if(selectedValue==="theoretical concepts"){
+        format="theoretical concepts"
+    break;
+    }
+    else if(selectedValue==="historical background"){
+        format="historical background"
     break;
     }
 
@@ -146,7 +146,7 @@ loading();
     body_out.style.display="block";
     console.log(length1)
     console.log(format)
-    prompt = `Explain me about ${txt} ${length1} like I am a ${level} and ${format}`;
+    prompt = `Explain me about ${txt} ${length1} like I am a ${level} and intrested mainly in its ${format}, which strictly must be in paragraphs`;
     const result = await model.generateContent(prompt);
     
 
