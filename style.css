@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-image: url("img_bg.jpg"); /* Replace with your image path */
+  background-size: cover; /* Fills container, may crop */
+  background-position: center; /* Optional: Center the image */
+  background-repeat: no-repeat; /* Prevents image tiling */
+  height: 100vh; /* Ensures background covers entire viewport height */
+  margin: 0; /* Remove default body margin */
+  padding: 0;
+   
+    object-fit: cover;
+  }
+  
+  img {
+    width: 100%; /* Image scales to fit width of body */
+    height: auto;  /* Maintains aspect ratio */
+    object-fit: cover; /* Optional: Crop to fill entire space */
+  }
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.inputs{
+    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px
+}
+
+.radio-length {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10vh;
+   
+}
+.radio-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10vh;
+   
+}
+.text-box{
+    outline: 0;
+    border: 2px solid rgb(246, 255, 0);
+    background: rgba( 255, 255, 255, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+    
+    height:6vh;
+    width: 12vw;
+    padding: 6px;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+.options{
+    outline: 0;
+    border: 0;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    height: 7.5vh;
+    width: 13vw;
+    padding: 6px;
+    border-radius: 20px;
+}
+.lines{
+
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 20px;
+}
+.length{
+    
+    background: rgba( 255, 255, 255, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 20px;
+
+}
+.btnn{
+    margin: 50px;
+}
+.butt{
+    border: 0;
+    width: 10vw;
+    height: 6vh;
+    border-radius: 20px;
+    font-size:20px;
+    font-weight:600;
+    transition: all 200ms ease-in-out;
+
+}
+.butt:hover{
+    background-color: rgb(181, 184, 187);
+}
+.output{
+    display: none;
+    width: 90vw;
+    height: 40vh;
+    background: rgba(255, 255, 255, 0.641);
+/* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px ); */
+border-radius: 20px;
+padding: 20px;
+overflow: auto;
+}
+.para{
+    font-size: larger;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+
+}
+.f{
+    height: 10vh;
+    width:10vw;
+
+}
+@media(max-width:480px){
+    body{
+        overflow: hidden;
+    }
+    .container{
+        display: flex;
+        margin: 15px;
+        height: 100vh;
+
+    } 
+  .text-box{
+    width: 38vw;
+  }
+  .options{
+    width: 43vw;
+    height: 8.2vh;
+  }
+  .inputs{
+    margin-top: 10px;
+    gap:15px;
+  }
+  label{
+    font-size:15px;
+  }
+  h2{
+    padding-bottom: 2px;
+  }
+  .butt{
+    width: 30vw;
+  }
+  .output{
+    width: 80vw;
+    margin: 10px;
+  }
+  .btnn{
+    margin: 30px;
+  }
+
+}
