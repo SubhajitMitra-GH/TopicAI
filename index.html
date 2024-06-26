@@ -10,10 +10,10 @@
 <body>
 <div class="container">
     <div class="inputs">
-        <input type="text" class="text-box" id="item" placeholder="Enter the topic" style="font-size: 17px; font-weight: 600;" spellcheck="true">
+        <input type="text" class="text-box" id="item" placeholder="Enter the topic" style="font-size: 24px; font-weight: 600;" spellcheck="true">
         <div class="drop-down-old">
-            <select id="options" class="options" id="item" style="font-size: 20px; color: rgb(255, 255, 255); font-weight: 500;">
-                <option style="color: black;"value="option0">Level</option>
+            <select id="options" class="options" id="item" style="font-size: 24px; color: rgb(255, 255, 255); font-weight: 500;">
+                <option style="color: black;"value="option0">LEVEL</option>
                 <option style="color: black;"value="5 Year Old">Very Easy</option>
                 <option style="color: black;"value="15 Year Old">Easy</option>
                 <option style="color: black;"value="graduate">Medium</option>
@@ -22,7 +22,7 @@
 
         </div>
         <div class="lines" id="item">
-            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px; color: rgb(255, 255, 255);">Length</h2>
+            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px; color: rgb(255, 255, 255);">LENGTH</h2>
             <div class="radio-group" id="item">
                 <label>
                     <input type="radio" name="options" value="briefly"> Brief
@@ -34,7 +34,7 @@
     
         </div>
         <div class="length" id="item">
-            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px ;color: rgb(255, 255, 255); padding-bottom: 12px;">Context</h2>
+            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px ;color: rgb(255, 255, 255); padding-bottom: 12px;">CONTEXT</h2>
             <div class="radio-length">
                 <label>
                     <input type="radio" name="option" value="practical examples"> Practical
@@ -51,7 +51,7 @@
         
     </div>  
     <div class="btnn">
-        <button class="butt">Search</button>
+        <button class="butt" style="font-size: 24px;">Search</button>
     </div>  
         
         <div class="output">
@@ -81,16 +81,9 @@
         let format,length1=undefined;
         
   
-        // Fetch your API_KEY
         const API_KEY ='AIzaSyB3rFasJTAwECuT9isOOkxbP95emSeyLQg';
-        // Reminder: This should only be for local testing
-  
-        // Access your API key (see "Set up your API key" above)
         const genAI = new GoogleGenerativeAI(API_KEY);
   
-        // ...
-  
-        // The Gemini 1.5 models are versatile and work with most use cases
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
     async function run(){

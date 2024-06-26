@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: "Poppins", sans-serif;
+    font-size: 18px;
 }
 body {
     background-image: url("img_bg.jpg"); /* Replace with your image path */
@@ -15,7 +16,9 @@ body {
    
     object-fit: cover;
   }
-  
+  h2{
+    font-size: 24px;
+  }
   img {
     width: 100%; /* Image scales to fit width of body */
     height: auto;  /* Maintains aspect ratio */
@@ -176,6 +179,7 @@ label{
   }
   .butt{
     width: 30vw;
+   
   }
   .output{
     width: 80vw;
