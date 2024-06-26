@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Essay</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.example.com/path/to/@google/generative-ai.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="inputs">
+        <input type="text" class="text-box" id="item" placeholder="Enter the topic" style="font-size: 17px; font-weight: 600;" spellcheck="true">
+        <div class="drop-down-old">
+            <select id="options" class="options" id="item" style="font-size: 20px; color: rgb(0, 0, 0); font-weight: 500;">
+                <option value="option0">Level</option>
+                <option value="5 Year Old">Very Easy</option>
+                <option value="15 Year Old">Easy</option>
+                <option value="graduate">Medium</option>
+                <option value="expert">Expert</option>
+            </select>
+
+        </div>
+        <div class="lines" id="item">
+            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px ;color: aliceblue; padding-bottom: 12px; ">Length</h2>
+            <div class="radio-group" id="item">
+                <label>
+                    <input type="radio" name="options" value="briefly"> Briefly
+                </label>
+                <label>
+                    <input type="radio" name="options" value="comprehensively"> Comprehensive
+                </label>
+                <label>
+                    <input type="radio" name="options" value="vastly"> Vastly
+                </label>
+            </div>
+    
+        </div>
+        <div class="length" id="item">
+            <h2 style="height: 3vh; padding-top: 4px; padding-left: 2px; color: aliceblue;">Format</h2>
+            <div class="radio-length">
+                <label>
+                    <input type="radio" name="option" value="in essay"> Essay
+                </label>
+                <label>
+                    <input type="radio" name="option" value="in paragraph"> Paragraph
+                </label>
+            </div>
+
+        </div>
+        
+    </div>  
+    <div class="btnn">
+        <button class="butt">Search</button>
+    </div>  
+        
+        <div class="output">
+            <p class="para">
+            </p>
+        </div>
+</div>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+      <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        const dropdown = document.getElementById('options');
+        const button=document.querySelector('.butt');
+        const radioButtonList = document.querySelectorAll('input[type="radio"][name="options"]');
+        const radioButtonFormat = document.querySelectorAll('input[type="radio"][name="option"]');
+        const text=document.querySelector('.text-box')
+        const out=document.querySelector('.para')
+        let body_out=document.querySelector('.output')
+        button.addEventListener('click',run)
+        let format,length1=undefined;
+        
+  
+        // Fetch your API_KEY
+        const API_KEY ='AIzaSyB3rFasJTAwECuT9isOOkxbP95emSeyLQg';
+        // Reminder: This should only be for local testing
+  
+        // Access your API key (see "Set up your API key" above)
+        const genAI = new GoogleGenerativeAI(API_KEY);
+  
+        // ...
+  
+        // The Gemini 1.5 models are versatile and work with most use cases
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
+
+    async function run(){
+        let level=dropdown.value;
+        for (const radioButton of radioButtonList) {
+    if (radioButton.checked) {
+         const selectedValue = radioButton.value;
+     
+
+      if (selectedValue === "briefly") {
+        length1="in short"
+    break;
+      }
+    else if(selectedValue==="comprehensively"){
+        length1="Comprehensively"
+    break;
+    }
+    else if(selectedValue==="vastly"){
+      length1="vastly"
+    break;
+    }
+
+}
+} 
+for (const radioBtn of radioButtonFormat) {
+    if (radioBtn.checked) {
+         const selectedValue = radioBtn.value;
+     
+
+      if (selectedValue === "in essay") {
+        format="in paragraph of 300 words strictly not less than that it can be more"
+    break;
+      }
+    else if(selectedValue==="in paragraph"){
+        format="in paragraph"
+    break;
+    }
+
+}
+} 
+
+let txt=text.value
+let prompt="";
+
+if(level!== "option0"&&txt.length<25&&length1!==undefined&&format!==undefined){
+    function loading(){
+    document.querySelector('.para').innerHTML="<img class =\"f\" src=\"loading_bar.gif\">";
+
+
+}
+loading();
+   
+    body_out.style.display="block";
+    console.log(length1)
+    console.log(format)
+    prompt = `Explain me about ${txt} ${length1} like I am a ${level} and ${format}`;
+    const result = await model.generateContent(prompt);
+    
+
+
+
+let data=result.response
+let f=String(data.text())
+
+ 
+        out.innerHTML=f;
+}
+      
+else{
+    alert("Input error")
+}
+
+    }
+
+  </script>
+</body>
+</html>
