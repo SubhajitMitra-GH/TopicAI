@@ -146,7 +146,7 @@ label{
 }
 @media(max-width:480px){
     body{
-        overflow: visible;
+        overflow: scroll;
     }
     .container{
         display: flex;
