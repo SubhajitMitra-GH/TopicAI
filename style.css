@@ -140,6 +140,10 @@ overflow: auto;
     width:10vw;
 
 }
+label{
+  font-size: larger;
+  font-weight: 500;
+}
 @media(max-width:480px){
     body{
         overflow: hidden;
@@ -158,6 +162,7 @@ overflow: auto;
     height: 8.2vh;
   }
   .inputs{
+    position: fixed;
     margin-top: 10px;
     gap:15px;
   }
