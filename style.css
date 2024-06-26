@@ -125,6 +125,7 @@ border-radius: 10px;
     background-color: rgb(181, 184, 187);
 }
 .output{
+    scrollbar-width: 2px;
     display: none;
     width: 90vw;
     height: 40vh;
