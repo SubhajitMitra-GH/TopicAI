@@ -41,6 +41,7 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 10vh;
+    color: white;
    
 }
 .radio-group{
@@ -48,9 +49,11 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 10vh;
+    color: white;
    
 }
 .text-box{
+  color: white;
     outline: 0;
     border: 2px solid rgb(246, 255, 0);
     background: rgba( 255, 255, 255, 0.3 );
@@ -121,10 +124,10 @@ border-radius: 10px;
     display: none;
     width: 90vw;
     height: 40vh;
-    background: rgba(255, 255, 255, 0.641);
-/* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba(255, 255, 255, 0.3);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 5.5px );
--webkit-backdrop-filter: blur( 5.5px ); */
+-webkit-backdrop-filter: blur( 5.5px );
 border-radius: 20px;
 padding: 20px;
 overflow: auto;
@@ -132,7 +135,7 @@ overflow: auto;
 .para{
     font-size: larger;
     font-weight: 600;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 
 }
 .f{
