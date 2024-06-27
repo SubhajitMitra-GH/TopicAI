@@ -212,3 +212,11 @@ label{
 
 
 }
+@supports (-webkit-touch-callout: none) {
+  /* CSS styles specific to iOS devices */
+  label{
+    font-size: larger;
+    font-weight: 500;
+  }
+  
+}
