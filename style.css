@@ -48,6 +48,9 @@ body {
     color: white;
    
 }
+::-webkit-scrollbar {
+  width: 0px;
+}
 .radio-group{
     display: flex;
     flex-direction: column;
